@@ -28,12 +28,12 @@ def get_book_by_isbn(isbn: int):
     return get_by_isbn(isbn)
 
 
-@app.get("/books/year/{year}")
+@app.get("/book/year/{year}")
 def get_books_by_year(year: int):
     return get_by_year(year)
 
 
-@app.get("/books/author/{author}")
+@app.get("/book/author/{author}")
 def get_books_by_author(author: str):
     return get_by_author(author)
 

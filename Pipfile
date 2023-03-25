@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pydantic = "*"
 strawberry-graphql = {extras = ["fastapi"], version = "*"}
+uvicorn = "*"
 
 [dev-packages]
 
