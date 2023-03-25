@@ -1,10 +1,15 @@
 import strawberry
 from fastapi import FastAPI
-from strawberry.fastapi import GraphQLRouter
-
-from graphql_schema import Query, Mutation
+from graphql_schema import Mutation, Query
 from models import Book
-from storage import get_by_isbn, get_by_year, get_by_author, get_all_books, put_book_to_storage
+from storage import (
+    get_all_books,
+    get_by_author,
+    get_by_isbn,
+    get_by_year,
+    put_book_to_storage,
+)
+from strawberry.fastapi import GraphQLRouter
 
 app = FastAPI()
 
