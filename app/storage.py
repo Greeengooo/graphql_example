@@ -44,7 +44,7 @@ def get_by_author(author: str):
 
 def put_book_to_storage(book: Union[Book, G_Book]):
     books.append(book)
-    return [book]
+    return book
 
 
 # graphql
@@ -56,10 +56,11 @@ def check_condition(filter_data, storage_data):
 
 
 def get_book_by_filters(filters: dict):
+    result = []
     for book in books:
         condition = [
             check_condition(filters[i], book.dict()[i]) for i in filters if filters[i]
         ]
         if all(condition):
-            return [book]
-    return []
+            result.append(book)
+    return result

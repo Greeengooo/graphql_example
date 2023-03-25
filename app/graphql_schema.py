@@ -15,10 +15,11 @@ class Query:
     def book(
         self,
         isbn: Optional[int] = None,
+        title: Optional[str] = None,
         year: Optional[int] = None,
         author: Optional[str] = None,
     ) -> List[G_Book]:
-        filters = {"isbn": isbn, "year": year, "author": author}
+        filters = {"isbn": isbn, "title": title, "year": year, "author": author}
         return get_book_by_filters(filters)
 
 
