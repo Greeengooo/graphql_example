@@ -59,7 +59,7 @@ def get_book_by_filters(filters: dict):
     result = []
     for book in books:
         condition = [
-            check_condition(filters[i], book.dict()[i]) for i in filters if filters[i]
+            check_condition(filters[i], book.__dict__[i]) for i in filters if filters[i]
         ]
         if all(condition):
             result.append(book)
